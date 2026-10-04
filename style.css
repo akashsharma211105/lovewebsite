@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0d0710;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ================= BACKGROUND ================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    background: #c8378f;
+
+    opacity: 0.12;
+
+    filter: blur(130px);
+
+    top: -150px;
+    left: -100px;
+
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    background: #7656d6;
+
+    opacity: 0.10;
+
+    filter: blur(130px);
+
+    bottom: -150px;
+    right: -100px;
+
+    z-index: -1;
+}
+
+
+
+/* ================= FIRST SCREEN ================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.small-text {
+    color: #d99bc5;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 22px;
+}
+
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 82px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #e98bc2;
+}
+
+
+.hero p {
+    color: #a99eaa;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+#openBtn {
+    margin-top: 40px;
+
+    padding: 16px 28px;
+
+    border: 1px solid #bd5f9d;
+
+    border-radius: 30px;
+
+    background: #211321;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+}
+
+#openBtn:hover {
+    background: #c64b91;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 35px rgba(198, 75, 145, 0.3);
+}
+
+
+
+/* ================= SECOND SECTION ================= */
+
+.message-section {
+
+    padding: 90px 20px 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+
+/* ================= CONGRATS CARD ================= */
+
+.message-card {
+
+    width: min(620px, 100%);
+
+    padding: 48px;
+
+    text-align: center;
+
+    background: rgba(24, 14, 25, 0.92);
+
+    border: 1px solid #39233a;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5);
+
+    transition: 0.4s;
+}
+
+.message-card:hover {
+    border-color: #a54e89;
+
+    transform: translateY(-5px);
+}
+
+
+.card-top {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+
+.message-card h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 45px;
+
+    color: #f09aca;
+
+    margin-bottom: 12px;
+}
+
+
+.message-card .main-message {
+
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+
+.message-card p {
+
+    color: #aaa0ad;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    margin-top: 14px;
+}
+
+
+.message-card strong {
+    color: #e7a1cc;
+}
+
+
+
+/* ================= IMAGE BOX ================= */
+
+.image-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #39233a;
+
+    background: #140c15;
+
+    transition: 0.4s;
+}
+
+.image-box:hover {
+
+    border-color: #b95791;
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+
+.image-box img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+
+.image-box:hover img {
+
+    transform: scale(1.04);
+}
+
+
+
+/* ================= COLLEGE IMAGE ================= */
+
+.college-image {
+
+    width: min(850px, 100%);
+
+    height: 300px;
+
+    border-radius: 22px;
+}
+
+
+.college-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.75),
+            transparent 60%
+        );
+
+    pointer-events: none;
+}
+
+
+.image-label {
+
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 22px;
+
+    left: 25px;
+}
+
+
+.image-label span {
+
+    color: #e98bc2;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.image-label p {
+
+    margin-top: 5px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+}
+
+
+
+/* ================= LOWER SECTION ================= */
+
+.lower-content {
+
+    width: min(850px, 100%);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+
+/* MEMORY IMAGE */
+
+.memory-image {
+
+    min-height: 380px;
+
+    border-radius: 22px;
+}
+
+
+
+/* ================= FINAL MESSAGE ================= */
+
+.final-message {
+
+    padding: 35px;
+
+    border: 1px solid #39233a;
+
+    border-radius: 22px;
+
+    background: rgba(24, 14, 25, 0.8);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.final-message .small-text {
+
+    margin-bottom: 18px;
+}
+
+
+.final-message h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 35px;
+
+    line-height: 1.15;
+
+    color: #f09aca;
+
+    margin-bottom: 18px;
+}
+
+
+.final-message > p {
+
+    color: #aaa0ad;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+
+/* ================= MORE BUTTON ================= */
+
+#moreBtn {
+
+    align-self: flex-start;
+
+    margin-top: 25px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #c64b91;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+#moreBtn:hover {
+
+    background: #e275b3;
+
+    transform: scale(1.05);
+}
+
+
+
+/* ================= HIDDEN MESSAGE ================= */
+
+.hidden-message {
+
+    display: none;
+
+    margin-top: 25px;
+
+    animation: reveal 0.7s ease;
+}
+
+
+.hidden-message.show {
+    display: block;
+}
+
+
+.line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background: #9e5184;
+
+    margin-bottom: 20px;
+}
+
+
+.hidden-message h4 {
+
+    color: #f1a6d0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    margin-top: 10px;
+}
+
+
+.sparkles {
+
+    margin-top: 15px;
+
+    letter-spacing: 7px;
+}
+
+
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ================= HEARTS ================= */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -20px;
+
+    font-size: 18px;
+
+    opacity: 0;
+
+    animation: floatUp 5s linear forwards;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .message-card {
+        padding: 35px 25px;
+    }
+
+    .message-card h2 {
+        font-size: 37px;
+    }
+
+    .college-image {
+        height: 240px;
+    }
+
+    .lower-content {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-image {
+        min-height: 300px;
+    }
+
+    .final-message {
+        padding: 30px;
+    }
+
+}
